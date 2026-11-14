@@ -86,8 +86,7 @@ export default function TodayPage() {
               placeholder="VPN drops when I open the lid"
               className="mt-2 min-h-20 w-full min-w-0 resize-none bg-transparent text-base outline-none placeholder:text-muted-foreground"
             />
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-xs text-muted-foreground">It searches {state.articles.length} stored answers. No outside model.</p>
+            <div className="flex items-center justify-end gap-3">
               <Button type="submit" disabled={!draft.trim()}>
                 Ask
               </Button>

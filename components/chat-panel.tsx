@@ -59,16 +59,12 @@ export function ChatPanel({ starter }: { starter?: string | null }) {
             <p className="text-xs text-muted-foreground">Replies only from the answer library</p>
           </div>
         </div>
-        <p className="hidden text-xs text-muted-foreground sm:block">{state?.articles.length ?? 0} stored answers</p>
       </div>
 
       <div className="flex-1 space-y-4 overflow-y-auto px-4 py-5 md:px-6">
         {turns.length === 0 ? (
           <div className="mx-auto max-w-3xl pt-6">
             <p className="font-heading text-center text-3xl tracking-tight">What broke?</p>
-            <p className="mt-2 text-center text-sm text-muted-foreground">
-              Pick one of the {STARTER_PROMPTS.length} problems the library already knows, or type your own. If it is not here, you&apos;ll get a request instead of a guess.
-            </p>
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               {STARTER_PROMPTS.map((prompt) => (
                 <button
