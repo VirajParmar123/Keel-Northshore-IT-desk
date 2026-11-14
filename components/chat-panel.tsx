@@ -6,35 +6,10 @@ import { ArrowUp, Library } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { transcript } from "@/lib/format"
+import { STARTER_PROMPTS } from "@/lib/prompts"
 import { useDesk } from "@/lib/store"
 import type { Article, ChatTurn } from "@/lib/types"
 import { cn } from "cn"
-
-const PROMPTS = [
-  "VPN drops after I open my laptop",
-  "I can't join the office Wi-Fi",
-  "Guest wifi for a visitor",
-  "I forgot my Okta password",
-  "Okta says too many codes",
-  "I need access to the Brand shared drive",
-  "Client email is not arriving",
-  "The meeting is missing on my phone",
-  "Slack notifications are silent",
-  "I can't hear anyone on Zoom",
-  "My Zoom camera is black",
-  "My laptop fan is loud and hot",
-  "The external monitor is flickering",
-  "My laptop will not charge on the dock",
-  "I can't release my print job",
-  "Paper jam on the floor 4 Canon",
-  "Figma is asking for an admin password",
-  "I need a replacement mouse",
-  "The new hire laptop is not ready",
-  "My badge will not open the stair door",
-  "My Mac says the disk is full",
-  "This email looks like phishing",
-  "My Mac is asking for a FileVault key",
-]
 
 export function ChatPanel({ starter }: { starter?: string | null }) {
   const { state, user, ask, chooseArticle, feedback } = useDesk()
@@ -95,7 +70,7 @@ export function ChatPanel({ starter }: { starter?: string | null }) {
               Keel looks up a stored answer. If the library doesn&apos;t have it, you&apos;ll get a request instead of a guess.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-2">
-              {PROMPTS.map((prompt) => (
+              {STARTER_PROMPTS.map((prompt) => (
                 <button
                   key={prompt}
                   type="button"

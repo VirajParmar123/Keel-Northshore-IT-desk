@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
 import { matchQuery } from "./match"
+import { STARTER_PROMPTS } from "./prompts"
 import { createSeed } from "./seed"
 
 const articles = createSeed().articles
@@ -76,4 +77,10 @@ test("a bare password is ambiguous", () => {
 test("a bare printer is ambiguous between release and jam", () => {
   const result = matchQuery("printer", articles)
   assert.equal(result.type, "clarify")
+})
+
+test("every starter prompt resolves to one stored answer", () => {
+  for (const prompt of STARTER_PROMPTS) {
+    assert.equal(matchQuery(prompt, articles).type, "answer", prompt)
+  }
 })
