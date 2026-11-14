@@ -12,10 +12,28 @@ import { cn } from "cn"
 
 const PROMPTS = [
   "VPN drops after I open my laptop",
-  "I can't hear anyone on Zoom",
-  "Paper jam on the floor 4 Canon",
+  "I can't join the office Wi-Fi",
   "Guest wifi for a visitor",
+  "I forgot my Okta password",
   "Okta says too many codes",
+  "I need access to the Brand shared drive",
+  "Client email is not arriving",
+  "The meeting is missing on my phone",
+  "Slack notifications are silent",
+  "I can't hear anyone on Zoom",
+  "My Zoom camera is black",
+  "My laptop fan is loud and hot",
+  "The external monitor is flickering",
+  "My laptop will not charge on the dock",
+  "I can't release my print job",
+  "Paper jam on the floor 4 Canon",
+  "Figma is asking for an admin password",
+  "I need a replacement mouse",
+  "The new hire laptop is not ready",
+  "My badge will not open the stair door",
+  "My Mac says the disk is full",
+  "This email looks like phishing",
+  "My Mac is asking for a FileVault key",
 ]
 
 export function ChatPanel({ starter }: { starter?: string | null }) {
@@ -71,7 +89,7 @@ export function ChatPanel({ starter }: { starter?: string | null }) {
 
       <div className="flex-1 space-y-4 overflow-y-auto px-4 py-5 md:px-6">
         {turns.length === 0 ? (
-          <div className="mx-auto max-w-lg pt-8 text-center">
+          <div className="mx-auto max-w-2xl pt-6 text-center">
             <p className="font-heading text-3xl tracking-tight">What broke?</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Keel looks up a stored answer. If the library doesn&apos;t have it, you&apos;ll get a request instead of a guess.
