@@ -56,7 +56,6 @@ export function ChatPanel({ starter }: { starter?: string | null }) {
           </span>
           <div>
             <p className="text-sm font-semibold">Ask Keel</p>
-            <p className="text-xs text-muted-foreground">Replies only from the answer library</p>
           </div>
         </div>
       </div>
@@ -164,10 +163,7 @@ function Bubble({
 
   return (
     <div className={cn("max-w-[40rem] rounded-2xl border bg-background px-4 py-3", turn.kind === "miss" && "border-[#e7c3b2] bg-[#fbf4ef]")}>
-      {turn.kind === "answer" && article ? (
-        <p className="text-[11px] font-semibold tracking-[0.14em] text-[#9a4a2c] uppercase">From the answer library</p>
-      ) : null}
-      {turn.kind === "answer" && article ? <p className="font-heading mt-1 text-xl leading-snug">{article.question}</p> : null}
+      {turn.kind === "answer" && article ? <p className="font-heading text-xl leading-snug">{article.question}</p> : null}
       <p className="mt-2 text-sm leading-relaxed">{turn.text}</p>
       {turn.kind === "answer" && article && article.steps.length > 0 ? (
         <ol className="mt-3 space-y-2 text-sm">
