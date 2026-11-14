@@ -64,18 +64,18 @@ export function ChatPanel({ starter }: { starter?: string | null }) {
 
       <div className="flex-1 space-y-4 overflow-y-auto px-4 py-5 md:px-6">
         {turns.length === 0 ? (
-          <div className="mx-auto max-w-2xl pt-6 text-center">
-            <p className="font-heading text-3xl tracking-tight">What broke?</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Keel looks up a stored answer. If the library doesn&apos;t have it, you&apos;ll get a request instead of a guess.
+          <div className="mx-auto max-w-3xl pt-6">
+            <p className="font-heading text-center text-3xl tracking-tight">What broke?</p>
+            <p className="mt-2 text-center text-sm text-muted-foreground">
+              Pick one of the {STARTER_PROMPTS.length} problems the library already knows, or type your own. If it is not here, you&apos;ll get a request instead of a guess.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <div className="mt-6 grid gap-2 sm:grid-cols-2">
               {STARTER_PROMPTS.map((prompt) => (
                 <button
                   key={prompt}
                   type="button"
                   onClick={() => send(prompt)}
-                  className="rounded-full border bg-background px-3 py-1.5 text-left text-sm hover:bg-muted"
+                  className="rounded-2xl border bg-background px-3 py-2 text-left text-sm hover:bg-muted"
                 >
                   {prompt}
                 </button>
